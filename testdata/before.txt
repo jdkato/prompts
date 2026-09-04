@@ -1,0 +1,21 @@
+before.md:3:1:Prompts.Imperative:Give the instruction, not the advice: 'You should'.
+before.md:3:45:Prompts.Imperative:Give the instruction, not the advice: 'Please'.
+before.md:3:68:Prompts.Absolutes:16 absolutes in one file. Past ten, none of them lands.
+before.md:7:1:Prompts.Imperative:Give the instruction, not the advice: 'Make sure to'.
+before.md:7:14:Prompts.Vague:'handle' says nothing about what to do. Say what.
+before.md:7:28:Prompts.Vague:'appropriately' says nothing about what to do. Say what.
+before.md:7:43:Prompts.Imperative:Give the instruction, not the advice: 'It is important to'.
+before.md:7:62:Prompts.Vague:'ensure' says nothing about what to do. Say what.
+before.md:7:191:Prompts.Contradiction:'Never commit' pulls against an earlier instruction. Say when each applies.
+before.md:9:1:Prompts.Imperative:Give the instruction, not the advice: 'Try to'.
+before.md:9:8:Prompts.Vague:'deal with' says nothing about what to do. Say what.
+before.md:9:29:Prompts.Vague:'properly' says nothing about what to do. Say what.
+before.md:9:43:Prompts.Vague:'address' says nothing about what to do. Say what.
+before.md:9:55:Prompts.Vague:'relevant' says nothing about what to do. Say what.
+before.md:9:73:Prompts.Vague:'as needed' says nothing about what to do. Say what.
+before.md:9:84:Prompts.Imperative:Give the instruction, not the advice: 'Remember to'.
+before.md:9:113:Prompts.Imperative:Give the instruction, not the advice: 'You need to'.
+before.md:9:125:Prompts.Contradiction:'be thorough' pulls against an earlier instruction. Say when each applies.
+before.md:11:37:Prompts.Contradiction:'Use emoji' pulls against an earlier instruction. Say when each applies.
+before.md:15:77:Prompts.Imperative:Give the instruction, not the advice: 'You must'.
+before.md:17:1:Prompts.SectionLength:A section of 365.00 words. Give the second half its own heading.

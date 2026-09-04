@@ -1,0 +1,16 @@
+# Two instructions that pull opposite ways, in one file. The first one seen
+# stands; the second is reported. The pairs are the ones that recur in
+# instruction files -- asking, committing, testing, emoji, length -- and a
+# file that means both, in different sections, should say when each applies.
+extends: consistency
+message: "'%s' pulls against an earlier instruction. Say when each applies."
+link: https://developers.openai.com/cookbook/examples/gpt4-1_prompting_guide
+level: warning
+ignorecase: true
+nonword: true
+either:
+  '\balways ask (?:before|first)\b': '\b(?:never|don''t|do not) ask\b'
+  '\b(?:use|include|add) emoji\b': '\b(?:no|avoid|never use|don''t use|do not use) emoji\b'
+  '\brun (?:the |all )?tests\b': '\b(?:skip|don''t run|do not run) (?:the |all )?tests\b'
+  '\b(?:be|keep (?:it|responses)) (?:brief|concise|short|terse)\b': '\b(?:be|keep (?:it|responses)) (?:thorough|detailed|verbose|comprehensive|exhaustive)\b'
+  '\bcommit (?:after|when|once|your)\b': '\b(?:never|do not|don''t) commit\b'

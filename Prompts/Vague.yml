@@ -1,0 +1,32 @@
+# A word that names no action. "Handle errors" and "ensure quality" read as
+# instructions and instruct nothing; a model given them does whatever it was
+# going to do. Each needs the sentence rewritten around what should happen.
+extends: existence
+message: "'%s' says nothing about what to do. Say what."
+link: https://code.claude.com/docs/en/best-practices
+level: warning
+ignorecase: true
+tokens:
+  - handle
+  - handles
+  - ensure
+  - ensures
+  - deal with
+  - take care of
+  - address
+  - manage
+  - appropriate
+  - appropriately
+  - properly
+  - correctly
+  - as needed
+  - as necessary
+  - if necessary
+  - if needed
+  - when appropriate
+  - where applicable
+  - where possible
+  - best practices
+  - gracefully
+  - robust
+  - relevant
