@@ -31,6 +31,12 @@ Name the files you mean. A style for instructions has no business in the README.
 | `Contradiction` | warning | Two instructions that pull opposite ways: `ask before` and `never ask`, `use emoji` and `no emoji`, `be brief` and `be thorough`, `commit after` and `never commit`, `run the tests` and `skip the tests`. |
 | `Frontmatter` | error | A skill's `name` past 64 characters or `description` past 1,024, which is where a loader stops reading. |
 | `SectionLength` | suggestion | A section past 300 words, subsections included. The fix is a heading. |
+| `Length` | warning | A file past 2,500 words, which is read on every turn. Move what is only sometimes needed into a skill or a linked file. |
+| `Emphasis` | warning | More than three shouted words, `IMPORTANT`, `MUST`, `NEVER`, `DO NOT`, in capitals. Emphasize one line and it stands out; emphasize many and none does. |
+| `ThirdPerson` | error | A skill description that opens `I can` or `You can use this`. It is read inside a system prompt, in the third person. |
+| `Trigger` | warning | A skill description that says what the skill does but never when to use it. |
+| `TimeSensitive` | warning | `as of 2025`, `before August 2026`, `currently`, `for now`. Wrong on a date the file does not know. |
+| `Paths` | error | A path with backslashes in prose. Forward slashes work everywhere. |
 
 Each alert names the span, so an agent asked to fix its own instruction file gets the exact words back. `Vague` and `Imperative` carry no replacement on purpose, since the fix is a sentence written around what should happen, and only the author knows what that is.
 
@@ -66,7 +72,13 @@ Each rule carries a `link` to the guidance it enforces, and each alert shows it.
 - **Absolutes**. The Claude Code guide: "If you emphasize many lines, none of them stands out." The GPT-4.1 guide: "It's generally not necessary to use all-caps or other incentives like bribes or tips," and a prompt that does "could cause GPT-4.1 to pay attention to it too strictly."
 - **Contradiction**. The GPT-4.1 guide: "if there are conflicting instructions, GPT-4.1 tends to follow the one closer to the end of the prompt." The skill authoring guide, under "Use consistent terminology": "Choose one term and use it throughout."
 - **Frontmatter**. The skill authoring guide's frontmatter requirements: a `name` of "Maximum 64 characters" and a `description` of "Maximum 1,024 characters."
-- **SectionLength**. The skill authoring guide: "Keep SKILL.md body under 500 lines for optimal performance," and the Claude Code guide on the over-specified `CLAUDE.md`: "Claude ignores half of it because important rules get lost in the noise."
+- **SectionLength** and **Length**. The skill authoring guide: "Keep SKILL.md body under 500 lines for optimal performance," and the Claude Code guide on the over-specified `CLAUDE.md`: "Claude ignores half of it because important rules get lost in the noise." The section figure is a fraction of the file figure; no guide publishes one.
+- **Emphasis**. The same two sentences as **Absolutes**, applied to capitals: "If you emphasize many lines, none of them stands out," and all-caps that "could cause GPT-4.1 to pay attention to it too strictly."
+## Sources for the skill rules
+
+- **ThirdPerson** and **Trigger**. The skill authoring guide, under "Writing effective descriptions": "Always write in third person. The description is injected into the system prompt, and inconsistent point-of-view can cause discovery problems," and "include both what the Skill does and when to use it."
+- **TimeSensitive**. The skill authoring guide, under "Avoid time-sensitive information," whose own bad example is `If you're doing this before August 2025, use the old API.`
+- **Paths**. The skill authoring guide: "Always use forward slashes in file paths, even on Windows."
 
 The pages: Anthropic's [prompting guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices), the [Claude Code guide](https://code.claude.com/docs/en/best-practices), the [skill authoring guide](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices), and OpenAI's [GPT-4.1 prompting guide](https://developers.openai.com/cookbook/examples/gpt4-1_prompting_guide).
 

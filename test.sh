@@ -58,15 +58,19 @@ compare() { # <label> <fixture> <golden>
 compare before "$root/fixtures/before.md" "$root/testdata/before.txt"
 compare skill "$root/fixtures/SKILL.md" "$root/testdata/skill.txt"
 compare guards "$root/fixtures/guards.md" "$root/testdata/guards.txt"
+compare triggers "$root/fixtures/skill-triggers.md" "$root/testdata/triggers.txt"
+compare long "$root/fixtures/long.md" "$root/testdata/long.txt"
 
-got=$(run "$root/fixtures/after.md")
-if [ -n "$got" ]; then
-	echo "FAIL after: the rewrite still violates the style"
-	printf '%s\n' "$got"
-	status=1
-else
-	echo "ok   after (clean)"
-fi
+for clean in after skill-good; do
+	got=$(run "$root/fixtures/$clean.md")
+	if [ -n "$got" ]; then
+		echo "FAIL $clean: still violates the style"
+		printf '%s\n' "$got"
+		status=1
+	else
+		echo "ok   $clean (clean)"
+	fi
+done
 
 # Every rule has to fire on something.
 if [ "$update" -eq 0 ]; then

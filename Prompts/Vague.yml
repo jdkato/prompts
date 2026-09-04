@@ -1,6 +1,10 @@
 # A word that names no action. "Handle errors" and "ensure quality" read as
 # instructions and instruct nothing; a model given them does whatever it was
 # going to do. Each needs the sentence rewritten around what should happen.
+#
+# "relevant" and "correctly" are not here. In the wild they point at a thing
+# the sentence already names -- "the relevant dependencies", "spelled
+# correctly" -- and flagging them was noise, two alerts in three.
 extends: existence
 message: "'%s' says nothing about what to do. Say what."
 link: https://code.claude.com/docs/en/best-practices
@@ -18,7 +22,6 @@ tokens:
   - appropriate
   - appropriately
   - properly
-  - correctly
   - as needed
   - as necessary
   - if necessary
@@ -29,4 +32,3 @@ tokens:
   - best practices
   - gracefully
   - robust
-  - relevant

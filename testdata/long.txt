@@ -1,0 +1,1 @@
+long.md:1:1:Prompts.Length:A file of 2860.00 words, read on every turn. Move what is only sometimes needed into a skill or a linked file.

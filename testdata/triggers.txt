@@ -1,0 +1,7 @@
+skill-triggers.md:3:1:Prompts.Trigger:The description says what the skill does but not when to use it. Add 'Use when ...'.
+skill-triggers.md:3:14:Prompts.ThirdPerson:A description reads in the third person: not 'I'.
+skill-triggers.md:8:1:Prompts.TimeSensitive:'As of 2025' will be wrong soon. State the current method, and put the old one under its own heading.
+skill-triggers.md:8:33:Prompts.Paths:A path with backslashes: 'C:\Users\shared\exports'. Use forward slashes, even on Windows.
+skill-triggers.md:8:64:Prompts.TimeSensitive:'currently' will be wrong soon. State the current method, and put the old one under its own heading.
+skill-triggers.md:8:82:Prompts.TimeSensitive:'before March 2026' will be wrong soon. State the current method, and put the old one under its own heading.
+skill-triggers.md:10:1:Prompts.Emphasis:5 lines shouting. Emphasize one, and the rest stand out less, not more.
