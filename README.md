@@ -9,9 +9,9 @@ The rules run wherever Vale runs, in an editor, a hook, or CI, and on any agent'
 > Prompts requires Vale v3.21.0 or later, for the section-length rule.
 
 ```ini
-Packages = https://github.com/jdkato/prompts/releases/latest/download/Prompts.zip
+Packages = Prompts
 
-[{AGENTS,CLAUDE,SKILL}.md]
+[**/{AGENTS,CLAUDE,SKILL}.md]
 BasedOnStyles = Prompts
 ```
 
@@ -19,7 +19,7 @@ BasedOnStyles = Prompts
 $ vale sync
 ```
 
-Name the files you mean. A style for instructions has no business in the README.
+Name the files you mean. A style for instructions has no business in the README. The `**/` reaches skills in their own directories, such as `skills/pdf/SKILL.md`, as well as files at the root.
 
 ## Rules
 
@@ -38,6 +38,8 @@ Name the files you mean. A style for instructions has no business in the README.
 | `Trigger` | warning | A skill description that says what the skill does but never when to use it. |
 | `TimeSensitive` | warning | `as of 2025`, `before August 2026`, `currently`, `for now`. Wrong on a date the file does not know. |
 | `Paths` | error | A path with backslashes in prose. Forward slashes work everywhere. |
+
+The skill rules, `Frontmatter`, `SkillName`, `ThirdPerson`, and `Trigger`, read only the frontmatter at the top of the file, folded (`>-`) descriptions included, so a `name:` or `description:` in an example further down is left alone.
 
 Each alert names the span, so an agent asked to fix its own instruction file gets the exact words back. `Vague` and `Imperative` carry no replacement on purpose, since the fix is a sentence written around what should happen, and only the author knows what that is.
 
@@ -91,7 +93,7 @@ The pages: Anthropic's [prompting guide](https://platform.claude.com/docs/en/bui
 $ ./test.sh
 ```
 
-One deliberately bad file against every rule, compared to a golden file; a rewrite, required to produce nothing; a guards file, which pins what each rule leaves alone; and the README, linted by the rules it describes. A rule no fixture reaches fails the run, since a Vale rule that matches nothing reports success.
+Deliberately bad files that between them reach every rule, each compared to a golden file; good files, required to produce nothing, including a folded description at exactly the 1,024-character limit; a guards file, which pins what each rule leaves alone; and the README, linted by the rules it describes. A rule no fixture reaches fails the run, since a Vale rule that matches nothing reports success.
 
 ## License
 

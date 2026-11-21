@@ -25,3 +25,13 @@ A `name` key in a workflow is not a skill's name:
 ```yaml
 name: Build + Test
 ```
+
+A description in an example is not the file's own:
+
+```yaml
+name: a-workflow-whose-name-runs-far-past-the-sixty-four-characters-a-loader-accepts
+description: I can run the tests.
+```
+
+A wrapped line can start with a key and still be prose. Use a release tag, not a branch
+name: a branch moves without notice, and a pinned tag is the one that stays where you left it.
