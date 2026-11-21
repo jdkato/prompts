@@ -60,8 +60,9 @@ compare skill "$root/fixtures/SKILL.md" "$root/testdata/skill.txt"
 compare guards "$root/fixtures/guards.md" "$root/testdata/guards.txt"
 compare triggers "$root/fixtures/skill-triggers.md" "$root/testdata/triggers.txt"
 compare long "$root/fixtures/long.md" "$root/testdata/long.txt"
+compare folded "$root/fixtures/skill-folded.md" "$root/testdata/folded.txt"
 
-for clean in after skill-good; do
+for clean in after skill-good skill-good-folded skill-good-limit; do
 	got=$(run "$root/fixtures/$clean.md")
 	if [ -n "$got" ]; then
 		echo "FAIL $clean: still violates the style"

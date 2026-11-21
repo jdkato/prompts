@@ -9,4 +9,4 @@ level: error
 scope: raw
 nonword: true
 tokens:
-  - '(?m)(?<=^description: )(?:I|I''m|I''ll|We|You can|Use me|This lets you)\b'
+  - '(?m)(?<=^description:[ \t]+["'']?|^description:[ \t]*[>|][-+]?[ \t]*\n[ \t]+)(?:I|I''m|I''ll|We|You can|Use me|This lets you)\b'

@@ -1,0 +1,4 @@
+skill-folded.md:2:7:Prompts.SkillName:'claude-pdf-helper' is not a valid skill name: use lowercase letters, numbers, and hyphens, without 'anthropic' or 'claude'.
+skill-folded.md:3:1:Prompts.Frontmatter:'description:' runs past what a skill loader accepts: 64 characters for a name, 1,024 for a description.
+skill-folded.md:3:1:Prompts.Trigger:The description says what the skill does but not when to use it. Add 'Use when ...'.
+skill-folded.md:4:3:Prompts.ThirdPerson:A description reads in the third person: not 'I'.

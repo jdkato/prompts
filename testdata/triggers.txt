@@ -1,3 +1,4 @@
+skill-triggers.md:2:7:Prompts.SkillName:'Analyze_Spreadsheets' is not a valid skill name: use lowercase letters, numbers, and hyphens, without 'anthropic' or 'claude'.
 skill-triggers.md:3:1:Prompts.Trigger:The description says what the skill does but not when to use it. Add 'Use when ...'.
 skill-triggers.md:3:14:Prompts.ThirdPerson:A description reads in the third person: not 'I'.
 skill-triggers.md:8:1:Prompts.TimeSensitive:'As of 2025' will be wrong soon. State the current method, and put the old one under its own heading.

@@ -1,7 +1,8 @@
 # A description says what the skill does and when to use it; the model picks
 # a skill from the description alone. The skill guide's form is "Use when
 # working with PDF files or when the user mentions PDFs". A description with
-# no trigger phrase is half a description.
+# no trigger phrase is half a description. The search follows a folded
+# description onto its indented lines.
 extends: existence
 message: "The description says what the skill does but not when to use it. Add 'Use when ...'."
 link: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices#writing-effective-descriptions
@@ -9,4 +10,4 @@ level: warning
 scope: raw
 nonword: true
 tokens:
-  - '(?mi)^description:(?!.*\b(?:use (?:this (?:skill )?|it )?(?:when(?:ever)?|for|if|to)|when(?:ever)? (?:the user|a user|claude|the model|the assistant|the agent|asked|working|you|someone)|trigger|invoke|for (?:tasks|requests|questions))\b)'
+  - '(?mi)^description:(?!(?:[^\n]|\n(?=[ \t]))*?\b(?:use\s+(?:this\s+(?:skill\s+)?|it\s+)?(?:when(?:ever)?|for|if|to)|when(?:ever)?\s+(?:the\s+user|a\s+user|claude|the\s+model|the\s+assistant|the\s+agent|asked|working|you|someone)|trigger|invoke|for\s+(?:tasks|requests|questions))\b)'

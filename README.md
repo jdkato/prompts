@@ -30,6 +30,7 @@ Name the files you mean. A style for instructions has no business in the README.
 | `Absolutes` | warning | More than ten of `always`, `never`, `must`, and `under no circumstances` in one file, counted over its prose. |
 | `Contradiction` | warning | Two instructions that pull opposite ways: `ask before` and `never ask`, `use emoji` and `no emoji`, `be brief` and `be thorough`, `commit after` and `never commit`, `run the tests` and `skip the tests`. |
 | `Frontmatter` | error | A skill's `name` past 64 characters or `description` past 1,024, which is where a loader stops reading. |
+| `SkillName` | error | A skill `name` with anything but lowercase letters, numbers, and hyphens, or with `anthropic` or `claude` in it. |
 | `SectionLength` | suggestion | A section past 300 words, subsections included. The fix is a heading. |
 | `Length` | warning | A file past 2,500 words, which is read on every turn. Move what is only sometimes needed into a skill or a linked file. |
 | `Emphasis` | warning | More than three shouted words, `IMPORTANT`, `MUST`, `NEVER`, `DO NOT`, in capitals. Emphasize one line and it stands out; emphasize many and none does. |
@@ -75,6 +76,8 @@ Each rule carries a `link` to the guidance it enforces, and each alert shows it.
 - **SectionLength** and **Length**. The skill authoring guide: "Keep SKILL.md body under 500 lines for optimal performance," and the Claude Code guide on the over-specified `CLAUDE.md`: "Claude ignores half of it because important rules get lost in the noise." The section figure is a fraction of the file figure; no guide publishes one.
 - **Emphasis**. The same two sentences as **Absolutes**, applied to capitals: "If you emphasize many lines, none of them stands out," and all-caps that "could cause GPT-4.1 to pay attention to it too strictly."
 ## Sources for the skill rules
+
+- **SkillName**. The skill authoring guide's frontmatter requirements: a `name` that "Must contain only lowercase letters, numbers, and hyphens" and "Cannot contain reserved words: `anthropic`, `claude`."
 
 - **ThirdPerson** and **Trigger**. The skill authoring guide, under "Writing effective descriptions": "Always write in third person. The description is injected into the system prompt, and inconsistent point-of-view can cause discovery problems," and "include both what the Skill does and when to use it."
 - **TimeSensitive**. The skill authoring guide, under "Avoid time-sensitive information," whose own bad example is `If you're doing this before August 2025, use the old API.`

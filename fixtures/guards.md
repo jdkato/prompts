@@ -19,3 +19,9 @@ This section stays under three hundred words, so it earns no alert, and it says 
 ## What the newer rules leave alone
 
 A lowercase "important" is a word, and three shouts are within budget: IMPORTANT, NEVER, ALWAYS. A path in a code span, `C:\Users\shared`, is code. A description written in the third person, on a line that is not frontmatter, is prose like any other. The year 2026 on its own is a number, and "since the redesign" names no date.
+
+A `name` key in a workflow is not a skill's name:
+
+```yaml
+name: Build + Test
+```

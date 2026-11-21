@@ -1,0 +1,12 @@
+# A skill's name is lowercase letters, numbers, and hyphens, and may not use
+# the reserved words "anthropic" or "claude". Only the frontmatter is read, so
+# a `name:` key in a YAML example further down is left alone.
+extends: existence
+message: "'%s' is not a valid skill name: use lowercase letters, numbers, and hyphens, without 'anthropic' or 'claude'."
+link: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices#yaml-frontmatter-requirements
+level: error
+scope: raw
+nonword: true
+tokens:
+  - '(?m)(?<=\A---[ \t]*\r?\n(?:(?!---)[^\n]*\n)*?name:[ \t]*["'']?)(?![a-z0-9-]+["'']?[ \t]*\r?$)[^\s"'']+(?:[ \t]+[^\s"'']+)*'
+  - '(?m)(?<=\A---[ \t]*\r?\n(?:(?!---)[^\n]*\n)*?name:[ \t]*["'']?)(?=[a-z0-9-]+["'']?[ \t]*\r?$)[a-z0-9-]*(?:anthropic|claude)[a-z0-9-]*'
